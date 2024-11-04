@@ -1,37 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kfouad <kfouad@student.1337.ma>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/04 19:16:04 by kfouad            #+#    #+#             */
+/*   Updated: 2024/11/04 19:54:28 by kfouad           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 
+#include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
- 
-	try
-	{
 
-		Bureaucrat khalid;
-    	Bureaucrat yassin("yassin", 50);
-    	Bureaucrat hmida("hmida", 150);
-		
-		std::cout << khalid << std::endl;
-		std::cout << yassin << std::endl;
-		std::cout << hmida << std::endl;
-		// khalid.add();
-		// hmida.sub();
-		// for (int i = 0; i < 10; i++)
-		// {
-		// 	yassin.add();
-		// 	std::cout << yassin << std::endl;
-		// }
-		// for (int i = 0; i < 10; i++)
-		// {
-		// 	yassin.sub();
-		// 	std::cout << yassin << std::endl;
-		// }
-		// while (1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	return 0;
+    try
+    {
+        Bureaucrat bureaucrat("fouad" ,2);
+        Form form("f1", 2, 5);
+        bureaucrat.signForm(form);
+        std::cout << form << form;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << "\n";
+    };
+
+    return 0;
 }
