@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 15:47:25 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/04 15:07:12 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 20:02:24 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute) : nam
 }
 
 AForm::~AForm() {}
+
+AForm::AForm(const AForm &Aform)
+    : name(Aform.name), isSigned(Aform.isSigned), gradeToSign(Aform.gradeToSign), gradeToExecute(Aform.gradeToExecute) {
+    // Copy constructor implementation
+}
 
 AForm &AForm::operator=(const AForm &AForm) {
     if (this == &AForm) {

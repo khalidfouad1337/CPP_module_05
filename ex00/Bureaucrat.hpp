@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 00:57:31 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/03 15:24:32 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:43:22 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Bureaucrat
         Bureaucrat(const std::string &name, int grade);
         
         ~Bureaucrat();
+
+        Bureaucrat(const Bureaucrat &bureaucrat);
         
         Bureaucrat	&operator=(const Bureaucrat &bureaucrat);
         const std::string getName();

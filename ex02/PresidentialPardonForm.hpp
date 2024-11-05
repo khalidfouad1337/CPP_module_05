@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:00:50 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/04 15:01:55 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:53:41 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm(const std::string &target);
         
         ~PresidentialPardonForm();
+
+        PresidentialPardonForm(const PresidentialPardonForm &PresidentialPardonForm);
         
         PresidentialPardonForm	&operator=(const PresidentialPardonForm &PresidentialPardonForm);
         const std::string getTarget() const;

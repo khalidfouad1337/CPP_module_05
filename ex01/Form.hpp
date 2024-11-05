@@ -20,6 +20,8 @@ class Form
         
         ~Form();
         
+        Form(const Form &form);
+        
         Form	&operator=(const Form &form);
         const std::string getName();
         bool getIsSigned();

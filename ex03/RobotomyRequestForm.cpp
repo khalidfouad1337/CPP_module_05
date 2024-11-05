@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:57:13 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/04 14:59:04 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:57:21 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Rob
 
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &RobotomyRequestForm) {
+    *this = RobotomyRequestForm;
+}
 
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &RobotomyRequestForm) {

@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:13:16 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/04 15:42:03 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:56:25 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class Intern
         Intern(const Intern &intern);
         
         ~Intern();
+
+        Intern(const Intern &intern);
         
         Intern	&operator=(const Intern &intern);
         

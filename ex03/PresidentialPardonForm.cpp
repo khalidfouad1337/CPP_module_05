@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:02:03 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/04 15:03:40 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:57:00 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AFor
 
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &PresidentialPardonForm) {
+    *this = PresidentialPardonForm;
+}
 
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &PresidentialPardonForm) {

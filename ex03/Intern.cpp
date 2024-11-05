@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:27:42 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/04 15:44:07 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:56:34 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ Intern &Intern::operator=(const Intern &other) {
 }
 
 Intern::~Intern() {}
+
+Intern::Intern(const Intern &intern) {
+    *this = intern;
+}
 
 AForm *Intern::createShrubberyCreationForm(const std::string &target) {
     return new ShrubberyCreationForm(target);
