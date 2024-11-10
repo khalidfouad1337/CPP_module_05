@@ -1,29 +1,28 @@
-SRC = main.cpp Bureaucrat.cpp 
 NAME = Bureaucrat
+
+SRCS = main.cpp Bureaucrat.cpp
+
+Include = Bureaucrat.hpp
+
+OBJS = $(SRCS:.cpp=.o)
 CC = c++
-FLAG = -Wall -Wextra -Werror -std=c++98
-OBJ = $(SRC:.cpp=.o)
+RM = rm -rf
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o : %.cpp ${Include}
+		@$(CC) $(CFLAGS) -g -c $< -o $@
 
-all: $(NAME)
+all:		$(NAME) 
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-		@echo "If you want to run the program tape x if no tape n"
-	@read -p ">> " answer; \
-	if [ $$answer = "x" ]; then \
-		./$(NAME); \
-	else \
-		echo "Goodbye"; \
-	fi
-
+$(NAME): $(OBJS)
+			$(CC) $(OBJS) -o $(NAME)
 
 clean:
-	@rm -f $(OBJ)
+				@$(RM) $(OBJS) 
+			
+fclean:			clean
+				@$(RM) $(NAME)
 
-fclean: clean
-	@rm -f $(NAME)
+re:				fclean $(NAME)
 
-re: fclean all
+.PHONY: all fclean clean re

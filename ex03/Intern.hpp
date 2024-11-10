@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kfouad <kfouad@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:13:16 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/05 19:56:25 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/10 17:05:42 by kfouad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ class Intern
         Intern(const Intern &intern);
         
         ~Intern();
-
-        Intern(const Intern &intern);
         
         Intern	&operator=(const Intern &intern);
         
