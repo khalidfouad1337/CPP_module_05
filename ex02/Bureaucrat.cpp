@@ -13,7 +13,6 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(g
     }
 }
 
-
 Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) {

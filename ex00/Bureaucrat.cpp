@@ -6,7 +6,7 @@
 /*   By: khalid <khalid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:58:59 by kfouad            #+#    #+#             */
-/*   Updated: 2024/11/05 19:43:31 by khalid           ###   ########.fr       */
+/*   Updated: 2024/11/05 23:33:09 by khalid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(g
         throw GradeTooLowException();
     }
 }
-
 
 Bureaucrat::~Bureaucrat() {}
 
