@@ -6,61 +6,51 @@
 /*   By: kfouad <kfouad@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:27:42 by khalid            #+#    #+#             */
-/*   Updated: 2024/11/10 17:04:20 by kfouad           ###   ########.fr       */
+/*   Updated: 2024/11/13 16:14:21 by kfouad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-#include <iostream>
 
-Intern::Intern() {}
+Intern::Intern(){};
 
-Intern::Intern(const Intern &other) {
-    *this = other;
-}
-
-Intern &Intern::operator=(const Intern &other) {
-    (void)other;
+Intern::Intern(const Intern &old)
+{
+    *this = old;
+};
+Intern &Intern::operator=(const Intern &old)
+{
+    (void)old;
     return *this;
-}
+};
 
-Intern::~Intern() {}
-
-// Intern::Intern(const Intern &intern) {
-//     *this = intern;
-// }
-
-AForm *Intern::createShrubberyCreationForm(const std::string &target) {
-    return new ShrubberyCreationForm(target);
-}
-
-AForm *Intern::createRobotomyRequestForm(const std::string &target) {
-    return new RobotomyRequestForm(target);
-}
-
-AForm *Intern::createPresidentialPardonForm(const std::string &target) {
-    return new PresidentialPardonForm(target);
-}
-
-AForm *Intern::makeForm(const std::string &form, const std::string &target) {
-    std::string forms[3] = {
-        "Shrubbery creation",
-        "Presidential Pardon",
-        "robotomy request"
+AForm *Intern::makeForm(std::string nameForm, std::string target)
+{
+    std::string typeForms[3] = {
+        "robotomy request",
+        "Shrubbery request",
+        "Presidential request",
+    };
+    AForm *tmp;
+    tmp = 0;
+    AForm *forms[3] = {
+        new RobotomyRequestForm(target),
+        new ShrubberyCreationForm(target),
+        new PresidentialPardonForm(target),
     };
 
-    AForm *(Intern::*FormCreationFunc[3])(const std::string &target) = {
-        &Intern::createShrubberyCreationForm,
-        &Intern::createPresidentialPardonForm,
-        &Intern::createRobotomyRequestForm
-    };
-
-    for (int i = 0; i < 3; i++) {
-        if (form == forms[i]) {
-            std::cout << "Intern creates " << form << std::endl;
-            return (this->*FormCreationFunc[i])(target);
+    for (size_t i = 0; i < 3; i++)
+    {
+        if (nameForm == typeForms[i])
+        {
+            std::cout << "Intern creates " << target << std::endl;
+            tmp = forms[i];
         }
+        else
+            delete forms[i];
     }
-    std::cout << "Form not found" << std::endl;
-    return NULL;
-}
+    if (!tmp)
+        std::cout << nameForm << ": Form doesn’t exist." << std::endl;
+    return tmp;
+};
+Intern::~Intern(){};
